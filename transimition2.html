@@ -1,0 +1,121 @@
+<!Doctype>
+<html>
+	<head>
+		<title>动画2</title>
+		<meta charset="utf-8">
+		<style>
+		.wrap{
+			width: 60%;
+			margin: 0 auto;
+		}
+			#block{
+				-webkit-perspective: 1200px;   //（第一种写法）设置视角，如果缺少这个属性，那么看到的永远都是2d
+				-webkit-perspective-origin: 50% 50%; ////视角在垂直居中位置
+				overflow: hidden;
+			}
+			.pageGroup{
+				position: relative;
+				width: 400px;
+				height: 400px;
+
+				-webkit-transform-style: preserve-3d; ////你要展示的是3d
+				
+			}
+			.page{
+				position: absolute;
+				width: 360px;
+				height: 360px;
+				padding: 20px;
+				margin:60px auto;
+
+				font-weight: bold;
+				font-size: 360px;
+				line-height: 360px;
+				text-align: center;
+
+				background-color: #000;
+				color: white;
+			}
+			#page1{
+				-webkit-transform-origin:bottom;
+
+				-webkit-transition:-webkit-transform 0.5s linear;
+
+			}
+			#page2,#page3,#page4,#page5{
+				-webkit-transform-origin:bottom;
+				-webkit-transition:-webkit-transform 0.5s linear;
+
+				transform: rotateX(90deg);
+				-webkit-transform: rotateX(90deg);
+				-moz-transform: rotateX(90deg);
+
+			}
+			.op{
+				text-align: center;
+				margin: 50px auto;
+				/*width: 120px;*/
+				height: 60px;
+			}
+			.op .next{
+				float: left;
+				display: block;
+				width: 65px;
+				border-radius: 8px;
+				background: lightblue;
+				margin-right: 5px;
+			}
+			.op .prev{
+				float: left;
+				display: block;
+				width: 65px;
+				border-radius: 8px;
+				background: lightgreen;
+			}
+		</style>
+		<script type="text/javascript">
+
+			var curIndex = 1;
+			function next() {		
+				if(curIndex == 5)
+					return ;               
+				var curPage = document.getElementById('page'+ curIndex);
+				curPage.style.webkitTransform ="rotateX(-90deg)";
+				curIndex++;
+				var nextPage =document.getElementById('page'+ curIndex);
+				nextPage.style.webkitTransform="rotateX(0deg)";
+			}
+			function prev(){
+				if(curIndex == 1) return ;
+				var curPage = document.getElementById('page'+curIndex);
+				curPage.style.webkitTransform ='rotateX(90deg)';
+				curIndex--;
+				var prevPage =document.getElementById('page'+ curIndex);
+				prevPage.style.webkitTransform="rotateX(0deg)";
+							
+
+					
+			}
+				
+</script>
+	</head>
+	<body>
+	<div class='wrap'>
+		<div class='block'>
+   			<div class="pageGroug">
+   				<div id='page1' class ="page">1</div>
+   				<div id='page2' class ="page">2</div>
+   				<div id='page3' class ="page">3</div>
+   				<div id='page4' class ="page">4</div>
+   				<div id='page5' class ="page">5</div>
+
+   			</div>
+   			<div class='op'>
+	   			<a href="javascript:next()" class="next">next</a>
+	   			<a href="javascript:prev()" class='prev'>prev</a>
+   			</div>
+   		</div>
+   		
+    </div>
+	</body>
+</html>
