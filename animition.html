@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> my animition</title>
+	<meta charset="utf-8">
+	<style>
+
+	body{
+		background: #ccc;
+	}
+		.box{
+			width: 70%;
+			margin: 340px 340px;
+			position: absolute;
+		}
+		.image{
+			width: 80px;
+			height: 120px;
+		}
+		.box i{
+			display: block;
+			width: 52px;
+			height: 55px;
+			background-image: url(images/cc.jpg);
+		}
+		@keyframes fly{
+			from{
+				background-position: 0px 0px; 
+			}
+			to{
+				background-position: -1040px 0px; 
+			}
+		}
+		@-moz-keyframes fly{
+			from{
+				background-position: 0px 0px; 
+			}
+			to{
+				background-position: -1040px 0px; 
+			}
+		}
+		@-webkit-keyframes fly{
+			from{
+				background-position: 0px 0px; 
+			}
+			to{
+				background-position: -1040px 0px; 
+			}
+		}
+	.box i:hover {
+		animation:fly 1s steps(13) infinite 0s;
+		-webkit-animation:fly 1s steps(13) infinite 0s;
+		-moz-animation:fly 1s steps(13) infinite 0s;
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<div class='box'>	
+		<i class='img'></i>
+	</div>
+
+</body>
+</html>
