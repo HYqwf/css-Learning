@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border-radius</title>
+	<style>
+	#wrap {
+		margin: 30px auto;
+		width: 60%;
+	}
+	/*It's a circle*/
+		.one {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			/*border-radius: 50%;*/
+			background-color: red;
+		}
+		
+		.one:hover {
+			content: '';
+			background-color: lightyellow;
+		}
+		.text {
+			position: absolute;
+			display: block;
+			font-size: 22px;
+			color: #fff;
+			text-align: center;
+			top: 4px;
+			left: 0;
+		}
+		/*It's a semicircle*/
+		.two {
+			margin-top: 50px;
+			width: 100px;
+			height: 50px;
+			border-radius: 50px 50px 0 0;
+			background-color: red;
+		}
+		/*It's a ellipse*/
+		.three {
+			margin-top: 20px;
+			width: 100px;
+			height: 50px;
+			border-radius: 50px/25px;
+			background-color: #ddd;
+		}
+		.four {
+		    position: relative;
+		    margin-top: 70px;
+		}
+		.four:hover::after {
+		    content: attr(data); //取到data属性的值
+		    display: inline-block;
+		    padding: 10px 14px;
+		    border: 1px solid #ddd;
+		    border-radius: 5px;
+		    position: absolute;
+		    top: -50px;
+		    left: -30px;
+		}
+		.five {
+			margin-top: 20px;
+			width: 100px;
+			height: 100px;
+			border: 5px solid black;
+			background-color: #fff;
+			box-shadow: 0 0 0 5px green, 0 0 0 10px red;
+		}
+
+			</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class='one'><p class="text">hello world</p></div>
+		<div class="two"></div>
+		<div class="three"></div>
+		<div class="four" data="hello, world">hello...</div>
+		<div class="five"></div>
+	</div>
+</body>
+</html>
