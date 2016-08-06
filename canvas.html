@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas 绘制</title>
+</head>
+<body>
+	<canvas id='canvas' width='500' height='500' style="display:block;border: 1px solid red; margin: 20px auto">
+	 </canvas>
+	
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+
+		var	canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		canvas.width = 500;
+		canvas.height =500;
+
+		// context.beginPath();
+		context.moveTo(0,0);
+		context.lineTo(500,500);
+		
+		context.moveTo(0,500);
+		context.lineTo(500,0);
+
+		context.moveTo(250,500);
+		context.lineTo(250,0);
+
+
+		context.moveTo(0,250);
+		context.lineTo(500,250);
+		context.fillStyle='#eee';
+		context.fill();
+		context.strokeStyle='#f00';
+		context.stroke();
+	} 
+</script>
+</html>
